@@ -1,7 +1,7 @@
-resume.bcf
-resume.fdb_latexmk
-resume.aux
-resume.log
-resume.out
-resume.run.xml
-resume.synctex.gz
+resume*.bcf
+resume*.fdb_latexmk
+resume*.aux
+resume*.log
+resume*.out
+resume*.run.xml
+resume*.synctex.gz

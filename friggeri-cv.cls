@@ -38,7 +38,7 @@
   \colorlet{header}{gray}
 \else
   \colorlet{fillheader}{gray}
-  \colorlet{header}{white}
+  \colorlet{header}{gray}
 \fi
 \colorlet{textcolor}{gray}
 \colorlet{headercolor}{gray}
@@ -71,19 +71,26 @@
   \color{white}%
 }
 
-\newcommand{\header}[3]{%
+\newcommand{\header}[4]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=4cm] (box) at (current page.north){};
-    \node [anchor=center] (name) at (box) {%
+    \node [rectangle, anchor=north, minimum width=\paperwidth, minimum height=3.2cm] (box) at (current page.north){};
+    \node [anchor=south] (name) at (box.south) {%
       \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
     };
-    \node [anchor=north] at (name.south) {%
-      \fontsize{14pt}{24pt}\color{header}%
-      \thinfont #3%
+    \node [anchor=south west, align=left] at (box.south west) {%
+      \hspace{1.4cm}\begin{tabular}{l}
+        #3
+      \end{tabular}
+    };
+    \node [anchor=south east, align=right] at (box.south east) {%
+      \fontsize{40pt}{72pt}
+      \begin{tabular}{r}
+        #4
+      \end{tabular}\hspace{1.3cm}
     };
   \end{tikzpicture}
-  \vspace{2.3cm}
+  \vspace{1cm}
 %  \vspace{-2\parskip}
 }
 
@@ -152,14 +159,20 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{11.5cm}{%
+  #1&\parbox[t]{16.1cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
     #4\vspace{\parsep}%
   }\\}
+\newcommand{\sentry}[3]{%
+  #1&\parbox[t]{16.1cm}{%
+    \textbf{#2}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=lightgray} #3}%
+  }\\}
 \newcommand{\centry}[2]{%
-  #1&\parbox[t]{11.5cm}{%
+  #1&\parbox[t]{16.1cm}{%
     #2\vspace{\parsep}%
   }\\}
 
@@ -321,5 +334,5 @@
 % Other tweaks %
 %%%%%%%%%%%%%%%%
 
-\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=2.5cm,nohead,nofoot]{geometry}
+\RequirePackage[left=1.5cm,top=2cm,right=1.5cm,bottom=1.5cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
