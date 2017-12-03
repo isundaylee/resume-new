@@ -1,0 +1,6 @@
+[1] Config.pm:324> INFO - This is Biber 2.1
+[1] Config.pm:327> INFO - Logfile is 'resume.blg'
+[51] biber-darwin:276> INFO - === Sun Dec  3, 2017, 06:02:03
+[51] Biber.pm:333> INFO - Reading 'resume.bcf'
+[148] Utils.pm:146> WARN - Warning: Found biblatex control file version 2.6, expected version 2.7
+[148] Utils.pm:146> WARN - No data sources defined!
