@@ -118,12 +118,12 @@
 }
 
 \renewcommand{\section}[1]{
-  \par\vspace{\parskip}
+  \par\vspace{0.3\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{\parskip}
+  \par\vspace{0.6\parskip}
 }
 
 \newcommand{\awardsection}[1]{
